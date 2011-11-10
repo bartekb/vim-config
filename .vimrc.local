@@ -226,3 +226,9 @@ let g:vimwiki_camel_case = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Remove detault mappings
 let VCSCommandDisableMappings=1
+
+" Uncomment the following to have Vim jump to the last position when
+" reopening a file
+if has("autocmd")
+au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+endif
